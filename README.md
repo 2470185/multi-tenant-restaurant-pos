@@ -28,7 +28,7 @@ owner view.
 **My role:** sole engineer. Requirements with a non-technical owner, data modelling,
 build, on-site deployment, and ongoing production support.
 
-**Timeline:** repository history spans 1 Jun – 24 Aug 2026 across 197 commits.
+**Timeline:** built and deployed over roughly three months, mid-2026.
 **Status:** live in production.
 
 ---
@@ -235,13 +235,46 @@ fix and I would build it before adding a fourth outlet.
 
 ---
 
-## Scale and outcomes
+## What changed for the business
 
-- Live across **3 restaurants** under one owner
-- **5 role types** with per-outlet scoping enforced at the API layer
-- Replaced end-of-day manual reconciliation at all three outlets
-- Tax invoices carry a registered GSTIN and per-line CGST/SGST computed at order time, replacing handwritten bills
-- *[Add real figures you're comfortable sharing: orders/day, uptime, hours saved]*
+**The end-of-day count stopped being a reconstruction.**
+Revenue used to be totalled by hand from a spike of paper bills after close. Every
+bill is now computed, numbered and stored as it is raised, so the day's total is a
+fact the system already knows rather than something a tired cashier adds up at
+midnight. The 23:00 cron nudges anyone who left the day open.
+
+**GST filing stopped being a re-keying exercise.**
+Tax was previously recalculated at filing time from handwritten bills — slow, and
+wrong in the ways arithmetic done twice is always wrong. CGST and SGST are now split
+per line at the moment of ordering, against the slab that item carried that day, and
+the invoice the customer receives is already the tax record. Filing became a matter
+of reading back figures that were correct when issued.
+
+**Orders stopped getting lost between the floor and the kitchen.**
+Paper chits go missing, get written twice, or arrive out of order. The kitchen ticket
+number is assigned by the server, so it can't be duplicated or skipped, and the same
+order is visible to the captain who took it and the cashier who bills it at the same
+instant.
+
+**Two waiters can no longer seat the same table.**
+On a busy floor this used to mean one order overwriting another, discovered at
+billing. A version check inside the database rejects the second claim outright and
+tells that captain to refresh — the conflict surfaces in the second it happens, not
+twenty minutes later at the till.
+
+**A finalised bill stopped being editable.**
+Once a bill is closed, its payment method cannot be changed and items cannot be
+added to the order behind it. Both rules are enforced in the database rather than
+the interface, so they hold regardless of which screen or device is used.
+
+**The owner stopped driving between outlets to find out how they were doing.**
+Each restaurant's figures and the consolidated view across all three are available
+from one screen, with the same numbers the tills produced.
+
+**And a dropped internet connection stopped being a service outage.**
+Each outlet holds its own database on-site. If the line goes down the restaurant
+keeps taking orders, printing tickets and closing bills; only the owner's
+cross-outlet view waits for the connection to come back.
 
 ---
 
