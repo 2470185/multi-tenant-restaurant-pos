@@ -104,12 +104,41 @@ client-side.
 
 ## Interface
 
+Full walkthrough of the system. **[Features and functionality →](FEATURES.md)**
+
+### Taking an order
+
 | | |
 |---|---|
 | ![Order taking](docs/screenshots/03-order-taking.png) | ![Live floor](docs/screenshots/02-live-floor.png) |
-| Order capture, GST slab per item | Live floor state across sections |
-| ![Owner dashboard](docs/screenshots/08-owner-dashboard.png) | ![Mobile floor](docs/screenshots/09-mobile-floor.png) |
-| Consolidated owner view | Captain's mobile view |
+| **Order capture** — searchable menu with the GST slab on every item, keyboard-driven for speed at a till | **Live floor** — table state by section, shared across every device in real time |
+
+### Billing and transactions
+
+| | |
+|---|---|
+| ![Transactions](docs/screenshots/04-transactions.png) | ![GST profiles](docs/screenshots/07-gst-profiles.png) |
+| **Transactions** — every bill with payment method and totals, reprintable and refundable | **GST profiles** — multiple GSTINs per outlet, the default one printing on invoices |
+
+### Reporting
+
+| | |
+|---|---|
+| ![Revenue analytics](docs/screenshots/06-revenue-analytics.png) | ![Owner dashboard](docs/screenshots/08-owner-dashboard.png) |
+| **Analytics** — daily, monthly and yearly revenue with payment-method breakdown | **Owner view** — all three outlets on one screen, exportable |
+
+### Management and access
+
+| | |
+|---|---|
+| ![Menu management](docs/screenshots/05-menu-management.png) | ![Login](docs/screenshots/01-login.png) |
+| **Menu** — categories, prices, GST slabs, instant availability toggles | **Login** — one entry point; the dashboard adapts to the role |
+
+### On a phone
+
+<img src="docs/screenshots/09-mobile-floor.png" alt="Mobile floor view" width="320">
+
+**Captain's mobile view** — the same floor state, sized for a phone carried between tables.
 
 *All screenshots are captured against a locally seeded demo database. Every name,
 figure and GSTIN shown is invented. No client or customer information appears
