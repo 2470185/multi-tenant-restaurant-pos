@@ -1,7 +1,7 @@
 # Multi-Restaurant POS & Management Platform
 
 > Production system running across three restaurants under one owner.
-> Built and deployed solo under contract. **Application source is private client
+> Built and deployed solo as a freelance project. **Application source is private client
 > property — this repository documents the architecture, interface and engineering
 > decisions, plus two extracted utilities that are my own work.**
 
@@ -226,7 +226,7 @@ also means a jammed or offline printer doesn't block the cashier from closing a 
 **PocketBase over a hand-rolled API.**
 It gave me auth, REST, realtime SSE, file storage and an admin UI on day one, as a
 single Go binary a non-technical owner can restart from a `.bat` file. That
-mattered more than API elegance for a solo build under contract.
+mattered more than API elegance for a solo build on a freelance timeline.
 
 What it cost me: PocketBase's filter syntax is not SQL, so anything analytical gets
 pulled into JS and reduced in memory. The reporting path fetches all bills in a
