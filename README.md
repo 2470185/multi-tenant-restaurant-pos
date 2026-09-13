@@ -5,7 +5,9 @@
 > property — this repository documents the architecture, interface and engineering
 > decisions, plus two extracted utilities that are my own work.**
 
-![Revenue analytics](docs/screenshots/06-revenue-analytics.png)
+![Walkthrough — login, live floor, order capture with live GST, transactions, analytics](docs/walkthrough.gif)
+
+<sub>Sign in · live floor · build an order and watch GST compute per line · transactions · monthly analytics. Recorded against a local demo database — every name and figure shown is invented.</sub>
 
 ---
 
