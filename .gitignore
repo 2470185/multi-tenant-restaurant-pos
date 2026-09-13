@@ -1,0 +1,82 @@
+# ---------------------------------------------------------------------------
+# This is a case-study repository. No application source, no data, no secrets.
+# Everything below is denied even though none of it should ever be created here
+# — the point is that an accidental copy cannot be committed by mistake.
+# ---------------------------------------------------------------------------
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+credentials*
+serviceAccount*.json
+auth.json
+license.key
+customer-hardware-id.txt
+secrets.*
+*.secret
+
+# Databases and dumps
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+*.bak
+pb_data/
+backup/
+backups/
+
+# Client data exports
+*.csv
+*.xlsx
+*.xls
+uploads/
+media/
+storage/
+pb_public/
+
+# Dependencies and build output
+node_modules/
+dist/
+build/
+out/
+.vite/
+.tanstack/
+.nitro/
+.output/
+*.tsbuildinfo
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Binaries
+pocketbase
+pocketbase.exe
+*.exe
+*.dll
+*.zip
+*.tar.gz
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.claude/
